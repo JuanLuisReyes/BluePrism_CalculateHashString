@@ -1,0 +1,1009 @@
+﻿<process name="ACMESystems_advanced" version="1.0" bpversion="7.3.0.9110" narrative="Objects for extracting data from table and opening each work item" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="b024a1b3-0962-41df-b5f6-0990e2ebf299">
+  <appdef>
+    <element name="Application Root">
+      <id>5fa6ff13-5e27-4d43-b774-68fc8c033661</id>
+      <type>Application</type>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <parentobject>ACMESystems_basics</parentobject>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="48fba4f0-f221-49dd-aade-dbe70056dd9f" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="22c4c933-9f87-4ea8-8db7-9ba45b4b26ac" type="Normal" published="True">
+    <name>ExtractTable</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="559bb0cb-a282-4f85-81ef-094e0f85b72c" type="Normal" published="True">
+    <name>NavigateToURL</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="dfefa101-4c77-41b7-b8a3-79649da4f8e6" type="Normal" published="True">
+    <name>ValidateLastPage</name>
+    <view>
+      <camerax>112</camerax>
+      <cameray>63</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="9e20add8-072e-4140-a135-2618c75c491a" type="Normal" published="True">
+    <name>ExtractWorkItemInfo</name>
+    <view>
+      <camerax>64</camerax>
+      <cameray>273</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37" type="Normal" published="True">
+    <name>NavigateToWIDetails</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="f178afd9-96b0-4ec0-ba4a-66f83fc780e9" type="Normal" published="True">
+    <name>UpdateWorkItem</name>
+    <view>
+      <camerax>100</camerax>
+      <cameray>252</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="d9b367e5-7519-436b-b57a-7489c3725803" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>15a3b8a8-8518-469f-a8ba-ba0529378db7</onsuccess>
+  </stage>
+  <stage stageid="15a3b8a8-8518-469f-a8ba-ba0529378db7" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="cb0f019a-e3b7-4604-a3e9-d7e08aa05cb2" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="9ea2913f-5551-4566-832b-a0cb4cff79d4" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>48fba4f0-f221-49dd-aade-dbe70056dd9f</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="f96d887b-f3a5-4eb7-9825-db9cd0d3ddf3" name="Start" type="Start">
+    <subsheetid>48fba4f0-f221-49dd-aade-dbe70056dd9f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>e8d4139d-b97b-4e2e-943e-31c3fe387813</onsuccess>
+  </stage>
+  <stage stageid="e8d4139d-b97b-4e2e-943e-31c3fe387813" name="End" type="End">
+    <subsheetid>48fba4f0-f221-49dd-aade-dbe70056dd9f</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="1b8e719c-af78-4614-a4ed-8791a536ad15" name="ExtractTable" type="SubSheetInfo">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a1ae9802-82b6-475c-98a4-0c95e9f59825" name="Start" type="Start">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>4f6b74b3-968d-4235-982b-a2f2df68c3e4</onsuccess>
+  </stage>
+  <stage stageid="e07b251f-35b4-4c05-b087-ba007c7e138c" name="End" type="End">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <loginhibit />
+    <display x="105" y="195" />
+    <outputs>
+      <output type="collection" name="extractedTable" stage="workItems" />
+    </outputs>
+  </stage>
+  <stage stageid="e032a176-ecd0-4f93-99b3-ea74b01779b3" name="" type="Note">
+    <subsheetid>48fba4f0-f221-49dd-aade-dbe70056dd9f</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="e592c40c-a968-4fdc-bcc6-a26eeceec3b6" name="" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="5c65d6bb-15a8-4524-955b-b97532de3ecd" name="Small" type="Data">
+    <loginhibit />
+    <display x="225" y="-75" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>5</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="0cbb580a-0b90-4651-8731-5bb0f2791977" name="Global timeouts" type="Block">
+    <loginhibit />
+    <narrative>Global variables set as timers for the applications
+</narrative>
+    <display x="150" y="-120" w="150" h="225" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="3bb79514-3b9e-4275-bd99-467f54460db6" name="Medium" type="Data">
+    <loginhibit />
+    <display x="225" y="-30" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>15</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="2bfb5534-afb7-45ea-a25d-ff3096b172a2" name="Large" type="Data">
+    <loginhibit />
+    <display x="225" y="15" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>30</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="8186606d-31b0-4851-a241-503507bea0cd" name="XLarge" type="Data">
+    <loginhibit />
+    <display x="225" y="60" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>60</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="e05073af-74f0-4d57-9a57-fc833a421d0b" name="Time Out - Throttle- Extract table" type="WaitEnd">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <loginhibit />
+    <display x="195" y="-30" w="60" h="60" />
+    <onsuccess>4f842d4e-8fd6-451e-9791-8163cb0921cd</onsuccess>
+    <groupid>70f268f3-36dd-42b2-81f5-b87fece09af4</groupid>
+  </stage>
+  <stage stageid="4f6b74b3-968d-4235-982b-a2f2df68c3e4" name="Throttle- Extract table" type="WaitStart">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" w="60" h="60" />
+    <groupid>70f268f3-36dd-42b2-81f5-b87fece09af4</groupid>
+    <choices>
+      <choice reply="True">
+        <name>WorkItems Check Exists</name>
+        <distance>90</distance>
+        <ontrue>01f376c8-9f4c-4ced-9284-10381654e1c3</ontrue>
+        <element id="56dcd2e1-f32b-4e6d-a060-6bca633069d3" />
+        <condition>
+          <id>WebCheckExists</id>
+          <arguments>
+            <argument>
+              <id>trackingid</id>
+              <value>
+              </value>
+            </argument>
+          </arguments>
+        </condition>
+        <comparetype>Equal</comparetype>
+      </choice>
+    </choices>
+    <timeout>[Medium]</timeout>
+  </stage>
+  <stage stageid="4f842d4e-8fd6-451e-9791-8163cb0921cd" name="System Exception - Work Items" type="Exception">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <display x="345" y="-30" w="90" h="30" />
+    <exception localized="yes" type="System Exception" detail="&quot;Error found while loading work items page&quot;" />
+  </stage>
+  <stage stageid="01f376c8-9f4c-4ced-9284-10381654e1c3" name="Extract Work Items" type="Read">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <loginhibit />
+    <display x="105" y="90" w="90" h="30" />
+    <onsuccess>e07b251f-35b4-4c05-b087-ba007c7e138c</onsuccess>
+    <step stage="workItems">
+      <element id="e39ef1ea-61df-4afe-8e83-f69ee359ddc7" />
+      <action>
+        <id>WebGetTableItems</id>
+        <arguments>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="4f4b073b-61dc-48b4-91c9-f60f88317afa" name="workItems" type="Collection">
+    <subsheetid>22c4c933-9f87-4ea8-8db7-9ba45b4b26ac</subsheetid>
+    <display x="-210" y="-15" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9d59fc5d-8db3-4dfe-beee-99e5b62bdba7" name="NavigateToURL" type="SubSheetInfo">
+    <subsheetid>559bb0cb-a282-4f85-81ef-094e0f85b72c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="b26e0dd9-3fcd-4165-b720-0ddf8945e0f1" name="Start" type="Start">
+    <subsheetid>559bb0cb-a282-4f85-81ef-094e0f85b72c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="nextPage" narrative="Pagination number to navigate throug the work items" stage="nextPage" />
+    </inputs>
+    <onsuccess>cfdb9010-7653-4333-9a8f-37c2563ea6d7</onsuccess>
+  </stage>
+  <stage stageid="b3c93a09-334f-4393-9300-ffce180f5f83" name="End" type="End">
+    <subsheetid>559bb0cb-a282-4f85-81ef-094e0f85b72c</subsheetid>
+    <loginhibit />
+    <display x="15" y="45" />
+  </stage>
+  <stage stageid="cfdb9010-7653-4333-9a8f-37c2563ea6d7" name="Next Work items page" type="Navigate">
+    <subsheetid>559bb0cb-a282-4f85-81ef-094e0f85b72c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" w="90" h="30" />
+    <onsuccess>b3c93a09-334f-4393-9300-ffce180f5f83</onsuccess>
+    <step>
+      <element id="8887df1e-e12c-4dc7-a5be-bb93317228ad" />
+      <action>
+        <id>WebNavigateApplication</id>
+        <arguments>
+          <argument>
+            <id>newurl</id>
+            <value>"https://acme-test.uipath.com/work-items?page=" &amp; [nextPage]</value>
+          </argument>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="dbe04205-72a4-432a-9ded-9cbcd866022d" name="nextPage" type="Data">
+    <subsheetid>559bb0cb-a282-4f85-81ef-094e0f85b72c</subsheetid>
+    <display x="-195" y="-15" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b3a2a25f-9c6e-4f4a-8152-d8b3f179d325" name="ValidateLastPage" type="SubSheetInfo">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="afe5f82e-3377-4d14-951d-4bda01480c2f" name="Start" type="Start">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>d91a06a0-46e2-4040-b0d4-6a02aea9291b</onsuccess>
+  </stage>
+  <stage stageid="15fed75f-1e4f-4255-bd80-b8f78de69a63" name="End" type="End">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="195" y="225" />
+    <outputs>
+      <output type="flag" name="isLastPage" stage="Error exists" />
+    </outputs>
+  </stage>
+  <stage stageid="831b5b84-2959-4762-8566-325006468011" name="Time Out - Throttle - Validate LP" type="WaitEnd">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="225" y="-15" w="60" h="60" />
+    <onsuccess>2f8f85e7-a210-4c2f-9fd6-14b21ebb2802</onsuccess>
+    <groupid>87fcf874-a7c7-49e5-b81f-37f315d44857</groupid>
+  </stage>
+  <stage stageid="d91a06a0-46e2-4040-b0d4-6a02aea9291b" name="Throttle - Validate LP" type="WaitStart">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="15" y="-15" w="60" h="60" />
+    <groupid>87fcf874-a7c7-49e5-b81f-37f315d44857</groupid>
+    <choices>
+      <choice reply="True">
+        <name>WorkItems Check Exists</name>
+        <distance>105</distance>
+        <ontrue>4c20c4cb-49a5-4167-a38c-10b5e527d834</ontrue>
+        <element id="56dcd2e1-f32b-4e6d-a060-6bca633069d3" />
+        <condition>
+          <id>WebCheckExists</id>
+          <arguments>
+            <argument>
+              <id>trackingid</id>
+              <value>
+              </value>
+            </argument>
+          </arguments>
+        </condition>
+        <comparetype>Equal</comparetype>
+      </choice>
+    </choices>
+    <timeout>[Medium]</timeout>
+  </stage>
+  <stage stageid="44b0fde3-26a5-4829-bfdc-ff8ead60cac7" name="Time Out - Check error message" type="WaitEnd">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="270" y="75" w="60" h="60" />
+    <onsuccess>59ccaf31-fcb3-4378-990b-6428de9b27eb</onsuccess>
+    <groupid>c751b409-29d9-4788-83e5-0c6262b18e77</groupid>
+  </stage>
+  <stage stageid="4c20c4cb-49a5-4167-a38c-10b5e527d834" name="Check error message" type="WaitStart">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="120" y="75" w="60" h="60" />
+    <groupid>c751b409-29d9-4788-83e5-0c6262b18e77</groupid>
+    <choices>
+      <choice reply="True">
+        <name>txt_ErrorMessage Check Exists</name>
+        <distance>75</distance>
+        <ontrue>4d068311-ad87-4309-a1ad-81885941428a</ontrue>
+        <element id="34253c0e-1f0b-4544-9dc0-9a7287fe9c18" />
+        <condition>
+          <id>WebCheckExists</id>
+          <arguments>
+            <argument>
+              <id>trackingid</id>
+              <value>
+              </value>
+            </argument>
+          </arguments>
+        </condition>
+        <comparetype>Equal</comparetype>
+      </choice>
+    </choices>
+    <timeout>[Small]</timeout>
+  </stage>
+  <stage stageid="ce71db3b-5c1c-4ba4-ac23-0f30f1bc9636" name="Error exists" type="Data">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="90" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4d068311-ad87-4309-a1ad-81885941428a" name="Set error to true" type="Calculation">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="195" y="150" w="90" h="30" />
+    <onsuccess>15fed75f-1e4f-4255-bd80-b8f78de69a63</onsuccess>
+    <calculation expression="True" stage="Error exists" />
+  </stage>
+  <stage stageid="59ccaf31-fcb3-4378-990b-6428de9b27eb" name="Set error to False" type="Calculation">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="390" y="75" w="90" h="30" />
+    <onsuccess>deefe3f1-b49f-47a4-9958-4dd04eddc68b</onsuccess>
+    <calculation expression="False" stage="Error exists" />
+  </stage>
+  <stage stageid="deefe3f1-b49f-47a4-9958-4dd04eddc68b" name="Anchor1" type="Anchor">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <loginhibit />
+    <display x="390" y="225" w="10" h="10" />
+    <onsuccess>15fed75f-1e4f-4255-bd80-b8f78de69a63</onsuccess>
+  </stage>
+  <stage stageid="2f8f85e7-a210-4c2f-9fd6-14b21ebb2802" name="SystemException - Last page" type="Exception">
+    <subsheetid>dfefa101-4c77-41b7-b8a3-79649da4f8e6</subsheetid>
+    <display x="345" y="-15" w="90" h="30" />
+    <exception localized="yes" type="System Exception" detail="&quot;Exception found while loading last page&quot;" />
+  </stage>
+  <stage stageid="098a2010-98eb-4648-b0c4-c344a7cbe075" name="ExtractWorkItemInfo" type="SubSheetInfo">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a745c327-6280-4938-b1e6-31f470681560" name="Start" type="Start">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="-30" y="-105" />
+    <inputs>
+      <input type="number" name="WIID" stage="WIID" />
+    </inputs>
+    <onsuccess>310260da-e915-4a36-9dd0-0d6e8fada678</onsuccess>
+  </stage>
+  <stage stageid="fc9ef831-b833-4c7c-aff3-1039e933f097" name="End" type="End">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="75" y="510" />
+    <outputs>
+      <output type="text" name="ClientID" stage="Client ID" />
+      <output type="text" name="Client Name" stage="ClientName" />
+      <output type="text" name="Country" stage="Country" />
+    </outputs>
+  </stage>
+  <stage stageid="564c79b1-392f-4123-9617-e1c4562d3004" name="Time Out - Throttle- Extract WI Details" type="WaitEnd">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="180" y="-30" w="60" h="60" />
+    <onsuccess>eecd04d8-ede5-4ca0-b67c-6019e6e119d8</onsuccess>
+    <groupid>53a15afe-3a13-4ec9-8b28-98512c5a7d94</groupid>
+  </stage>
+  <stage stageid="310260da-e915-4a36-9dd0-0d6e8fada678" name="Throttle- Extract WI Details" type="WaitStart">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="-30" y="-30" w="60" h="60" />
+    <groupid>53a15afe-3a13-4ec9-8b28-98512c5a7d94</groupid>
+    <choices>
+      <choice reply="True">
+        <name>WorkItemDetails Check Exists</name>
+        <distance>105</distance>
+        <ontrue>1107ea27-5805-467d-9f83-7dfc9b3861e0</ontrue>
+        <element id="06d3c899-33b6-48f2-aa88-60443a902dd1" />
+        <condition>
+          <id>WebCheckExists</id>
+          <arguments>
+            <argument>
+              <id>trackingid</id>
+              <value>
+              </value>
+            </argument>
+          </arguments>
+        </condition>
+        <comparetype>Equal</comparetype>
+      </choice>
+    </choices>
+    <timeout>[Medium]</timeout>
+  </stage>
+  <stage stageid="fd07abb1-be08-435b-a421-35eb53962b8d" name="NavigateToWIDetails" type="SubSheetInfo">
+    <subsheetid>838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="8a1f3548-99ca-4167-8d5e-90b4a65832de" name="Start" type="Start">
+    <subsheetid>838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="WIID" stage="WIID" />
+    </inputs>
+    <onsuccess>92708625-b4fa-4cfb-84e9-7eaf879d24cd</onsuccess>
+  </stage>
+  <stage stageid="9a9e3a4b-8d3b-4526-86cb-e7f02fa6ccc3" name="End" type="End">
+    <subsheetid>838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+  </stage>
+  <stage stageid="92708625-b4fa-4cfb-84e9-7eaf879d24cd" name="Navigate to WI Details" type="Navigate">
+    <subsheetid>838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" w="90" h="30" />
+    <onsuccess>9a9e3a4b-8d3b-4526-86cb-e7f02fa6ccc3</onsuccess>
+    <step>
+      <element id="8887df1e-e12c-4dc7-a5be-bb93317228ad" />
+      <action>
+        <id>WebNavigateApplication</id>
+        <arguments>
+          <argument>
+            <id>newurl</id>
+            <value>[WI Path] &amp; [WIID]</value>
+          </argument>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="904ba729-f679-4ed0-8231-7b063310f457" name="WI Path" type="Data">
+    <subsheetid>838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37</subsheetid>
+    <loginhibit />
+    <display x="-195" y="0" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">https://acme-test.uipath.com/work-items/</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5ef16d05-26c9-4ccb-ab81-0953d6244c52" name="WIID" type="Data">
+    <subsheetid>838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37</subsheetid>
+    <display x="-195" y="45" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="df5de311-5f34-4fa3-9714-d3c33e50f6ce" name="Local variables" type="Block">
+    <subsheetid>838dfbe5-f9fa-4d4b-b3a0-12a357f6ef37</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="135" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="1107ea27-5805-467d-9f83-7dfc9b3861e0" name="Get WI Details" type="Read">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="75" y="45" w="90" h="30" />
+    <onsuccess>4848f26d-b09e-4496-9c63-ed80d95e432f</onsuccess>
+    <step stage="WIDetails">
+      <element id="281afdbc-7106-442f-9f5c-69db5fdbdc8b" />
+      <action>
+        <id>WebGetText</id>
+        <arguments>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="ff3be68f-e108-4e0a-839e-cc5e1d1218ca" name="WIDetails" type="Data">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-180" y="30" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="be8f0339-a997-4afd-b70d-5966ee5f9a22" name="Local variables" type="Block">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="-255" y="-15" w="150" h="375" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="eecd04d8-ede5-4ca0-b67c-6019e6e119d8" name="System Exception - Extract Work item info" type="Exception">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="300" y="-30" w="90" h="30" />
+    <exception localized="yes" type="System Exception" detail="&quot;Exception found while loading WI Details page for work item &quot; &amp; [WIID]" />
+  </stage>
+  <stage stageid="3e03c706-f716-48f6-852a-aeb72fb670c8" name="WIID" type="Data">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-180" y="60" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fd7664b9-f785-4150-9602-c1c5adefaa76" name="Client ID" type="Data">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-180" y="105" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="263f63a2-1c97-4f34-93bb-d7f9424e0bb2" name="ClientName" type="Data">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-180" y="135" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a36186ff-0346-4e06-b2d4-1878ee3a7af3" name="Country" type="Data">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="-180" y="165" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4848f26d-b09e-4496-9c63-ed80d95e432f" name="Utility - Strings::Split Text" type="Action">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="75" y="105" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Text to Split" friendlyname="Text to Split" narrative="The text to split" expr="[WIDetails]" />
+      <input type="text" name="Split Char" friendlyname="Split Char" narrative="The split delimiter" expr="&quot;:&quot;" />
+      <input type="text" name="Collection Field Name" friendlyname="Collection Field Name" narrative="The name of the field for the resulting collection" expr="&quot;Elements&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Split Values" friendlyname="Split Values" narrative="The resulting collection containing the split values" stage="SplittedText" />
+    </outputs>
+    <onsuccess>a86a17e6-d8df-4035-8327-3e28490e69e9</onsuccess>
+    <resource object="Utility - Strings" action="Split Text" />
+  </stage>
+  <stage stageid="43b3171d-8270-4f0a-b3cb-3d2df5c0d375" name="SplittedText" type="Collection">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-180" y="225" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a86a17e6-d8df-4035-8327-3e28490e69e9" name="Utility - Collection Manipulation::Read Collection Field" type="Action">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="75" y="165" w="90" h="30" />
+    <inputs>
+      <input type="number" name="Row Index" friendlyname="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[Counter]" />
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection to read." expr="[SplittedText]" />
+      <input type="text" name="Field Name" friendlyname="Field Name" narrative="The field within the collection to read." expr="&quot;Elements&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" friendlyname="Value Read" narrative="The value of the requested field as text." stage="Value Read" />
+    </outputs>
+    <onsuccess>0b704b10-b688-476d-852e-25515772140d</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="e3f5151d-3a78-4871-80fb-b6896c8a5062" name="Counter" type="Data">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="-180" y="255" w="90" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>1</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0b704b10-b688-476d-852e-25515772140d" name="Assign value to variable" type="ChoiceStart">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="75" y="225" w="90" h="30" />
+    <groupid>d877b68f-01de-4dcc-a462-07bcf7aa4e8e</groupid>
+    <choices>
+      <choice expression="[Counter] = 1">
+        <name>Client ID</name>
+        <distance>60</distance>
+        <ontrue>bdd20f5d-eed3-4e7c-85cc-b674343d1807</ontrue>
+      </choice>
+      <choice expression="[Counter] = 2">
+        <name>Account Number</name>
+        <distance>105</distance>
+        <ontrue>6b2a49a8-d5be-41b4-b2f3-bca5774edd2e</ontrue>
+      </choice>
+      <choice expression="[Counter] = 3">
+        <name>Amount</name>
+        <distance>150</distance>
+        <ontrue>0e1116de-7cbf-46ae-bf7e-21cedfd31ddd</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="a5b5d2ca-f588-4ec8-bd1b-440dbfc79a49" name="Otherwise1" type="ChoiceEnd">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="75" y="435" w="90" h="30" />
+    <onsuccess>fc9ef831-b833-4c7c-aff3-1039e933f097</onsuccess>
+    <groupid>d877b68f-01de-4dcc-a462-07bcf7aa4e8e</groupid>
+  </stage>
+  <stage stageid="784d9fa8-93ba-4022-8205-c6f11d029dee" name="Value Read" type="Data">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-180" y="285" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fcd7ba31-114f-4a60-baf2-75de6cdbb012" name="Split Values" type="Collection">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <display x="-180" y="315" w="90" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="78a7a709-9cd0-4e08-80f7-7812b2d8fa12" name="Anchor8" type="Anchor">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="345" y="165" w="10" h="10" />
+    <onsuccess>a86a17e6-d8df-4035-8327-3e28490e69e9</onsuccess>
+  </stage>
+  <stage stageid="bf773ce3-d9f0-43a6-a178-377b99affddc" name="Increase counter + 1" type="Calculation">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="345" y="330" w="90" h="30" />
+    <onsuccess>11b9b52a-4def-44f8-b280-c19416584e1a</onsuccess>
+    <calculation expression="[Counter] + 1" stage="Counter" />
+  </stage>
+  <stage stageid="bdd20f5d-eed3-4e7c-85cc-b674343d1807" name="Get ClientID" type="Calculation">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="180" y="285" w="90" h="30" />
+    <onsuccess>f24cee30-1ce3-4033-967c-3486777cd605</onsuccess>
+    <calculation expression="Trim(Replace([Value Read], &quot;Client Name&quot;, &quot;&quot;))" stage="Client ID" />
+  </stage>
+  <stage stageid="f24cee30-1ce3-4033-967c-3486777cd605" name="Anchor3" type="Anchor">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="270" y="285" w="10" h="10" />
+    <onsuccess>6a304317-f466-4567-9953-f78dcb37c485</onsuccess>
+  </stage>
+  <stage stageid="6b2a49a8-d5be-41b4-b2f3-bca5774edd2e" name="Get Client Name" type="Calculation">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="180" y="330" w="90" h="30" />
+    <onsuccess>6a304317-f466-4567-9953-f78dcb37c485</onsuccess>
+    <calculation expression="Trim(Replace([Value Read], &quot;Client Country&quot;, &quot;&quot;))" stage="ClientName" />
+  </stage>
+  <stage stageid="0e1116de-7cbf-46ae-bf7e-21cedfd31ddd" name="Get Country" type="Calculation">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="180" y="375" w="90" h="30" />
+    <onsuccess>d12f57aa-3b57-437a-9386-ac0b4c092749</onsuccess>
+    <calculation expression="Trim([Value Read])" stage="Country" />
+  </stage>
+  <stage stageid="6a304317-f466-4567-9953-f78dcb37c485" name="Anchor4" type="Anchor">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="270" y="330" w="10" h="10" />
+    <onsuccess>bf773ce3-d9f0-43a6-a178-377b99affddc</onsuccess>
+  </stage>
+  <stage stageid="d12f57aa-3b57-437a-9386-ac0b4c092749" name="Anchor5" type="Anchor">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="270" y="375" w="10" h="10" />
+    <onsuccess>6a304317-f466-4567-9953-f78dcb37c485</onsuccess>
+  </stage>
+  <stage stageid="11b9b52a-4def-44f8-b280-c19416584e1a" name="If counter &gt; 3" type="Decision">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="345" y="255" w="90" h="30" />
+    <decision expression="[Counter] &gt; 3" />
+    <ontrue>70b87fe3-ecea-478b-81ca-e0b33be020d7</ontrue>
+    <onfalse>78a7a709-9cd0-4e08-80f7-7812b2d8fa12</onfalse>
+  </stage>
+  <stage stageid="92eb5f0e-a0e1-4c57-87e2-2d662cd9eb16" name="Anchor2" type="Anchor">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="435" y="510" w="10" h="10" />
+    <onsuccess>fc9ef831-b833-4c7c-aff3-1039e933f097</onsuccess>
+  </stage>
+  <stage stageid="70b87fe3-ecea-478b-81ca-e0b33be020d7" name="Anchor6" type="Anchor">
+    <subsheetid>9e20add8-072e-4140-a135-2618c75c491a</subsheetid>
+    <loginhibit />
+    <display x="435" y="255" w="10" h="10" />
+    <onsuccess>92eb5f0e-a0e1-4c57-87e2-2d662cd9eb16</onsuccess>
+  </stage>
+  <stage stageid="986cb090-a90b-4cf5-b388-3362b61a2886" name="UpdateWorkItem" type="SubSheetInfo">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e6fea7ca-e715-4359-9961-76dac4973277" name="Start" type="Start">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="HashResult" stage="HashResult" />
+    </inputs>
+    <onsuccess>e6f05fcc-c297-4f45-8f9b-c14721ff3f6d</onsuccess>
+  </stage>
+  <stage stageid="10df6ede-7ee0-4f42-ac05-952f1d3a1bf2" name="End" type="End">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="195" y="435" />
+  </stage>
+  <stage stageid="14390540-40b0-4b01-b4b4-af59c86b4593" name="Time Out - Throttle" type="WaitEnd">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="240" y="-30" w="60" h="60" />
+    <onsuccess>01bd9c6c-75bb-43f2-8a13-0f4d6cf1ff92</onsuccess>
+    <groupid>27f354a1-41a8-4df1-85d9-6d493ae359f2</groupid>
+  </stage>
+  <stage stageid="e6f05fcc-c297-4f45-8f9b-c14721ff3f6d" name="Throttle" type="WaitStart">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" w="60" h="60" />
+    <groupid>27f354a1-41a8-4df1-85d9-6d493ae359f2</groupid>
+    <choices>
+      <choice reply="True">
+        <name>WorkItemDetails Check Exists</name>
+        <distance>105</distance>
+        <ontrue>ca2dfab0-317c-4cae-8749-3ab5a602267e</ontrue>
+        <element id="06d3c899-33b6-48f2-aa88-60443a902dd1" />
+        <condition>
+          <id>WebCheckExists</id>
+          <arguments>
+            <argument>
+              <id>trackingid</id>
+              <value>
+              </value>
+            </argument>
+          </arguments>
+        </condition>
+        <comparetype>Equal</comparetype>
+      </choice>
+    </choices>
+    <timeout>[Medium]</timeout>
+  </stage>
+  <stage stageid="ca2dfab0-317c-4cae-8749-3ab5a602267e" name="Click - Update WI" type="Navigate">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="120" y="30" w="90" h="30" />
+    <onsuccess>41ea765d-dfd1-4820-93e8-de7927ea2527</onsuccess>
+    <step>
+      <element id="81f50578-0ed0-4cf3-8a32-69da33900102" />
+      <action>
+        <id>WebClick</id>
+        <arguments>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="67e48647-8379-4645-bb7c-32c1353dfe83" name="Time Out - Wait - Update WI Window" type="WaitEnd">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="270" y="105" w="60" h="60" />
+    <onsuccess>2f2fab80-9353-4297-bb04-8cc2a0147924</onsuccess>
+    <groupid>5e714e79-26f5-4020-b7f0-cdb1719cb285</groupid>
+  </stage>
+  <stage stageid="41ea765d-dfd1-4820-93e8-de7927ea2527" name="Wait - Update WI Window" type="WaitStart">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="120" y="105" w="60" h="60" />
+    <groupid>5e714e79-26f5-4020-b7f0-cdb1719cb285</groupid>
+    <choices>
+      <choice reply="True">
+        <name>UpdateWorkItem Check Exists</name>
+        <distance>75</distance>
+        <ontrue>03b64d44-5e33-43ec-b831-fb784ae04d65</ontrue>
+        <element id="a51e4833-9023-4160-a5ba-10713abab575" />
+        <condition>
+          <id>WebCheckExists</id>
+          <arguments>
+            <argument>
+              <id>trackingid</id>
+              <value>
+              </value>
+            </argument>
+          </arguments>
+        </condition>
+        <comparetype>Equal</comparetype>
+      </choice>
+    </choices>
+    <timeout>[Medium]</timeout>
+  </stage>
+  <stage stageid="03b64d44-5e33-43ec-b831-fb784ae04d65" name="Write comments" type="Write">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="195" y="195" w="90" h="30" />
+    <onsuccess>a5c47d69-09f2-4275-bd7e-10a42d54af3b</onsuccess>
+    <step expr="[HashResult]">
+      <element id="aadc4d46-88ba-4a47-9853-869c10f5839e" />
+      <action>
+        <id>WebWrite</id>
+        <arguments>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="fdacddd2-9691-4137-aab6-ad5defa8bc24" name="HashResult" type="Data">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <display x="-195" y="30" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">a68g9as8d6ga8s6g8as6</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a5c47d69-09f2-4275-bd7e-10a42d54af3b" name="Click dropdown" type="Navigate" interval="1">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="195" y="240" w="90" h="30" />
+    <onsuccess>2cc67862-ddb0-4587-828e-f1db17e9b58c</onsuccess>
+    <step>
+      <element id="9b812319-b504-4f99-b20f-d772395452a6" />
+      <action>
+        <id>WebClick</id>
+        <arguments>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="3298bcce-e478-4a33-8920-48dc07737c0b" name="Status" type="Data">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="-195" y="60" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">Completed</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2cc67862-ddb0-4587-828e-f1db17e9b58c" name="Click - Status" type="Navigate">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="195" y="285" w="90" h="30" />
+    <onsuccess>c6cb6e04-b0f2-472c-a6fb-20feeb5e9a57</onsuccess>
+    <step>
+      <element id="112af35f-1871-4ae1-a8c7-9055a7aa2c64" />
+      <action>
+        <id>WebClick</id>
+        <arguments>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="c6cb6e04-b0f2-472c-a6fb-20feeb5e9a57" name="Click - Update WI" type="Navigate" interval="2">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="195" y="330" w="90" h="30" />
+    <onsuccess>e47d1305-ad23-4ae4-99bc-845bd9b0035c</onsuccess>
+    <step>
+      <element id="ceb24f9d-6412-45e0-be76-4c55bfe51ed2" />
+      <action>
+        <id>WebClick</id>
+        <arguments>
+          <argument>
+            <id>trackingid</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="01bd9c6c-75bb-43f2-8a13-0f4d6cf1ff92" name="System Exception - Update WI Throttle" type="Exception">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <display x="375" y="-30" w="90" h="30" />
+    <exception localized="yes" type="System Exception" detail="&quot;Exception while loading WI Details page&quot;" />
+  </stage>
+  <stage stageid="2f2fab80-9353-4297-bb04-8cc2a0147924" name="System Exception - Update WI" type="Exception">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <display x="405" y="105" w="90" h="30" />
+    <exception localized="yes" type="System Exception" detail="&quot;Exception found while loading Update WI page&quot;" />
+  </stage>
+  <stage stageid="e47d1305-ad23-4ae4-99bc-845bd9b0035c" name="Close PopUp" type="Navigate" interval="1">
+    <subsheetid>f178afd9-96b0-4ec0-ba4a-66f83fc780e9</subsheetid>
+    <loginhibit />
+    <display x="195" y="375" w="90" h="30" />
+    <onsuccess>10df6ede-7ee0-4f42-ac05-952f1d3a1bf2</onsuccess>
+    <step>
+      <element id="8887df1e-e12c-4dc7-a5be-bb93317228ad" />
+      <action>
+        <id>SendKeys</id>
+        <arguments>
+          <argument>
+            <id>newtext</id>
+            <value>"{ENTER}"</value>
+          </argument>
+          <argument>
+            <id>interval</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+    <step>
+      <element id="0bac95aa-81ab-44ad-9b51-9f7c8fe5501f" />
+      <action>
+        <id>UIAButtonPress</id>
+      </action>
+    </step>
+  </stage>
+</process>
